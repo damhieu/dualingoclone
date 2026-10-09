@@ -1,9 +1,94 @@
-:root {
-  --font-display:
-    Spline Sans, Inter, ui-sans-serif, system-ui, sans-serif, Apple Color Emoji, Segoe UI Emoji,
-    Segoe UI Symbol, Noto Color Emoji;
-  --font-mono:
-    ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, Liberation Mono, Courier New, monospace;
-  --font-rounded: 'SF Pro Rounded', 'Hiragino Maru Gothic ProN', Meiryo, 'MS PGothic', sans-serif;
-  --font-serif: Georgia, 'Times New Roman', serif;
+@import "tailwindcss/theme.css" layer(theme);
+@import "tailwindcss/preflight.css" layer(base);
+@import "tailwindcss/utilities.css";
+
+@import "nativewind/theme";
+
+/* Design tokens. Keep in sync with `src/theme/`. */
+@theme {
+  /* Colors: primary */
+  --color-lingua-purple: #6c4ef5;
+  --color-lingua-deep-purple: #5b3bf6;
+  --color-lingua-blue: #4d8bff;
+  --color-lingua-green: #21c16b;
+
+  /* Colors: semantic */
+  --color-success: #21c16b;
+  --color-warning: #ffc800;
+  --color-streak: #ff8a00;
+  --color-error: #ff4d4f;
+  --color-info: #4d8bff;
+
+  /* Colors: neutrals */
+  --color-text-primary: #0d132b;
+  --color-text-secondary: #6b7280;
+  --color-border: #e5e7eb;
+  --color-surface: #f6f7fb;
+  --color-background: #ffffff;
+
+  /* Font family: one font file per weight (loaded in `src/app/_layout.tsx`) */
+  --font-poppins: "Poppins-Regular";
+  --font-poppins-medium: "Poppins-Medium";
+  --font-poppins-semibold: "Poppins-SemiBold";
+  --font-poppins-bold: "Poppins-Bold";
+
+  /* Type scale: size + line height */
+  --text-h1: 32px;
+  --text-h1--line-height: 1.2;
+  --text-h2: 24px;
+  --text-h2--line-height: 1.3;
+  --text-h3: 20px;
+  --text-h3--line-height: 1.3;
+  --text-h4: 16px;
+  --text-h4--line-height: 1.4;
+  --text-body-large: 16px;
+  --text-body-large--line-height: 1.6;
+  --text-body-medium: 14px;
+  --text-body-medium--line-height: 1.6;
+  --text-body-small: 13px;
+  --text-body-small--line-height: 1.6;
+  --text-caption: 11px;
+  --text-caption--line-height: 1.4;
+}
+
+/* Typography utilities: font family + size + line height + default color. */
+
+/* Page / Screen Title */
+@utility h1 {
+  @apply font-poppins-bold text-h1 text-text-primary;
+}
+
+/* Section Title */
+@utility h2 {
+  @apply font-poppins-semibold text-h2 text-text-primary;
+}
+
+/* Card / Module Title */
+@utility h3 {
+  @apply font-poppins-semibold text-h3 text-text-primary;
+}
+
+/* Subheading */
+@utility h4 {
+  @apply font-poppins-medium text-h4 text-text-primary;
+}
+
+/* Important content */
+@utility body-large {
+  @apply font-poppins text-body-large text-text-primary;
+}
+
+/* Body text */
+@utility body-medium {
+  @apply font-poppins text-body-medium text-text-primary;
+}
+
+/* Supporting text */
+@utility body-small {
+  @apply font-poppins text-body-small text-text-primary;
+}
+
+/* Labels, meta text */
+@utility caption {
+  @apply font-poppins text-caption text-text-secondary;
 }
